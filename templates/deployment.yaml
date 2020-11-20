@@ -36,11 +36,17 @@ spec:
               protocol: TCP
           livenessProbe:
             initialDelaySeconds: 60
+            failureThreshold: 10
+            periodSeconds: 20
+            timeoutSeconds: 10
             httpGet:
               path: /health/uchiwa
               port: http
           readinessProbe:
             initialDelaySeconds: 60
+            failureThreshold: 10
+            periodSeconds: 20
+            timeoutSeconds: 10
             httpGet:
               path: /health/uchiwa
               port: http
